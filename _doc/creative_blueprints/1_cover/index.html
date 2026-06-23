@@ -1,0 +1,84 @@
+<style>
+.mode-landscape .sl-layout { flex-direction: row; }
+.mode-portrait .sl-layout { flex-direction: column; }
+.mode-landscape .sl-left { width: 56%; }
+.mode-portrait .sl-left { width: 100%; }
+.mode-landscape .sl-right { display: flex; width: 44%; }
+.mode-portrait .sl-right { display: none; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="w-full h-full flex sl-layout">
+
+    <!-- Left: Content -->
+    <div class="sl-left h-full flex flex-col justify-between p-12 bg-white">
+      <div class="flex flex-col gap-6">
+        <span class="self-start px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase"
+          style="background:rgba(0,229,255,0.1);color:#0097a7;border:1px solid rgba(0,229,255,0.25);">
+          Enterprise Mobility Platform
+        </span>
+
+        <h1 class="text-5xl font-black leading-tight text-slate-900">
+          One Platform.<br/>Six Roles.<br/>Zero Compromise.
+        </h1>
+
+        <p class="text-base text-slate-500 leading-relaxed" style="max-width:22rem;">
+          AIcegti P.L. unifies ride booking, vehicle services, and parcel delivery — Customer, Rider, Garage, Employee, Investor, and Admin — in a single dark-premium React&nbsp;19 enterprise dashboard.
+        </p>
+
+        <div class="flex gap-8 pt-1">
+          <div>
+            <div class="text-3xl font-black text-slate-900">100+</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">Screens</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black text-slate-900">6</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">User Roles</div>
+          </div>
+          <div>
+            <div class="text-3xl font-black text-slate-900">41</div>
+            <div class="text-xs text-slate-400 uppercase tracking-wider mt-1">KPI Indicators</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="w-14 h-1 rounded-full mb-5" style="background:#00E5FF;"></div>
+        <data-attribution />
+      </div>
+    </div>
+
+    <!-- Right: Visual -->
+    <div class="sl-right h-full relative overflow-hidden flex-col" style="background:#0A0A0A;">
+      <img
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=Dark%20enterprise%20mobility%20app%20dashboard%20UI%20with%20glowing%20neon%20cyan%20%2300E5FF%20accents%2C%20GPS%20live%20map%20tracking%2C%20KPI%20progress%20bar%20cards%2C%20trust%20score%20widget%2C%20booking%20timeline%2C%20rider%20and%20customer%20panels%2C%20dark%20premium%20professional%20tech%20interface"
+        alt="AIcegti enterprise dashboard"
+        class="w-full h-full object-cover"
+        style="opacity:0.88;"
+      />
+      <div class="absolute inset-0" style="background:linear-gradient(to right,rgba(255,255,255,0.1) 0%,transparent 30%);"></div>
+
+      <!-- Floating status pill -->
+      <div class="absolute bottom-8 left-6 right-6">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-xl"
+          style="background:rgba(0,229,255,0.13);border:1px solid rgba(0,229,255,0.28);">
+          <div class="w-2 h-2 rounded-full" style="background:#00E5FF;"></div>
+          <span class="text-xs font-semibold text-white tracking-wide">Live — GPS · Trust · KPI · Payments</span>
+        </div>
+      </div>
+
+      <!-- Role tags -->
+      <div class="absolute top-8 right-6 flex flex-col gap-2">
+        <div class="px-3 py-1 rounded-lg text-xs font-medium text-white text-right"
+          style="background:rgba(0,229,255,0.18);border:1px solid rgba(0,229,255,0.2);">Customer</div>
+        <div class="px-3 py-1 rounded-lg text-xs font-medium text-white text-right"
+          style="background:rgba(20,184,166,0.18);border:1px solid rgba(20,184,166,0.2);">Rider</div>
+        <div class="px-3 py-1 rounded-lg text-xs font-medium text-white text-right"
+          style="background:rgba(34,197,94,0.18);border:1px solid rgba(34,197,94,0.2);">Investor</div>
+        <div class="px-3 py-1 rounded-lg text-xs font-medium text-white text-right"
+          style="background:rgba(239,68,68,0.18);border:1px solid rgba(239,68,68,0.2);">Admin</div>
+      </div>
+    </div>
+
+  </div>
+</section>
