@@ -1,0 +1,136 @@
+<style>
+.mode-landscape .sl-body { flex-direction: row; }
+.mode-portrait .sl-body { flex-direction: column; }
+.mode-landscape .sl-left { width: 52%; }
+.mode-portrait .sl-left { width: 100%; }
+.mode-landscape .sl-right { width: 48%; }
+.mode-portrait .sl-right { width: 100%; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="w-full h-full flex flex-col p-10 gap-4">
+
+    <!-- Header -->
+    <div class="flex flex-col gap-2">
+      <div class="flex items-center gap-3">
+        <div class="w-1 h-6 rounded-full" style="background:#00E5FF;"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">North Star</span>
+        <span class="ml-auto px-3 py-1 rounded-full text-xs font-bold" style="background:rgba(245,158,11,0.12);color:#b45309;border:1px solid rgba(245,158,11,0.3);">
+          Projected impact — based on your inputs
+        </span>
+      </div>
+      <h2 class="text-3xl font-black text-slate-900">Weekly Verified Operations</h2>
+      <p class="text-sm text-slate-500">The single number AIcegti lives or dies by — bookings confirmed and initiated across all three service verticals.</p>
+    </div>
+
+    <!-- Body -->
+    <div class="flex-1 flex sl-body gap-5 min-h-0">
+
+      <!-- Left: Operations + WVO Formula -->
+      <div class="sl-left flex flex-col gap-4">
+
+        <!-- Verified operations -->
+        <div class="rounded-2xl p-5 border border-slate-100" style="background:#f8fafc;">
+          <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Verified Operation</div>
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style="background:rgba(0,229,255,0.12);">✓</div>
+              <div>
+                <div class="text-sm font-bold text-slate-800">Booking Confirmed</div>
+                <div class="text-xs text-slate-500">Ride, vehicle service, or parcel booking initiated and confirmed in the platform by a real user</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-7 h-7 rounded-lg flex items-center justify-center text-sm" style="background:rgba(0,229,255,0.12);">✓</div>
+              <div>
+                <div class="text-sm font-bold text-slate-800">OTP-Verified Delivery Completed</div>
+                <div class="text-xs text-slate-500">Parcel or vehicle pickup/drop confirmed with OTP at completion</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- WVO Formula -->
+        <div class="rounded-2xl p-5" style="background:#0f172a;">
+          <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color:#64748b;">WVO Calculation</div>
+
+          <!-- Inputs -->
+          <div class="flex flex-col gap-3 mb-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs" style="color:#94a3b8;">Active customers / week</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-bold" style="background:rgba(245,158,11,0.15);color:#fbbf24;border:1px dashed rgba(245,158,11,0.4);">
+                250 — Assumption ✎
+              </span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-xs" style="color:#94a3b8;">Avg bookings per customer / week</span>
+              <span class="px-2.5 py-1 rounded-lg text-xs font-bold" style="background:rgba(245,158,11,0.15);color:#fbbf24;border:1px dashed rgba(245,158,11,0.4);">
+                3 — Assumption ✎
+              </span>
+            </div>
+          </div>
+
+          <!-- Formula -->
+          <div class="rounded-xl p-4" style="background:rgba(0,229,255,0.07);border:1px solid rgba(0,229,255,0.15);">
+            <div class="text-xs mb-2" style="color:#64748b;">250 customers × 3 bookings =</div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-4xl font-black" style="color:#00E5FF;">750</span>
+              <span class="text-sm font-bold" style="color:#00b3cc;">verified operations / week</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right: Value Calculation -->
+      <div class="sl-right flex flex-col gap-4">
+
+        <!-- Value per operation -->
+        <div class="rounded-2xl p-5 border border-slate-100" style="background:#f8fafc;">
+          <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Value per Operation</div>
+          <div class="flex flex-col gap-2 text-xs text-slate-600">
+            <div class="flex justify-between items-center">
+              <span>Parties per operation</span>
+              <span class="font-bold text-slate-800">2 (customer + provider)</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span>Coordination time saved</span>
+              <span class="px-2 py-0.5 rounded text-xs font-bold" style="background:rgba(245,158,11,0.12);color:#b45309;border:1px dashed rgba(245,158,11,0.35);">20 min — Assumption ✎</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span>Value of time</span>
+              <span class="px-2 py-0.5 rounded text-xs font-bold" style="background:rgba(245,158,11,0.12);color:#b45309;border:1px dashed rgba(245,158,11,0.35);">₹200/hr — Assumption ✎</span>
+            </div>
+            <div class="border-t border-slate-200 pt-2 mt-1 flex justify-between items-center">
+              <span class="font-semibold text-slate-700">Value/op = 2 × (20/60) × ₹200</span>
+              <span class="text-base font-black text-slate-900">= ₹133</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Totals -->
+        <div class="flex-1 rounded-2xl p-6 flex flex-col justify-between" style="background:#0f172a;">
+          <div class="text-xs font-bold uppercase tracking-widest mb-4" style="color:#64748b;">Projected Value</div>
+
+          <div class="flex flex-col gap-4">
+            <div class="flex justify-between items-baseline">
+              <span class="text-sm" style="color:#94a3b8;">Per week: 750 × ₹133</span>
+              <span class="text-2xl font-black" style="color:#14B8A6;">₹99,750</span>
+            </div>
+            <div class="border-t" style="border-color:#1e293b;"></div>
+            <div class="flex justify-between items-baseline">
+              <span class="text-sm" style="color:#94a3b8;">Per year: ₹99,750 × 52</span>
+              <span class="text-3xl font-black" style="color:#00E5FF;">₹51,87,000</span>
+            </div>
+          </div>
+
+          <div class="mt-4 px-4 py-3 rounded-xl text-xs" style="background:rgba(245,158,11,0.1);border:1px dashed rgba(245,158,11,0.3);color:#fbbf24;">
+            All dashed values are editable assumptions — replace with your actual customer counts and time data to update projections.
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
