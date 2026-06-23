@@ -1,0 +1,105 @@
+<style>
+.mode-landscape .sl-split { flex-direction: row; }
+.mode-portrait .sl-split { flex-direction: column; }
+.mode-landscape .sl-col { width: 50%; }
+.mode-portrait .sl-col { width: 100%; }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="w-full h-full flex flex-col p-10 gap-5">
+
+    <!-- Header -->
+    <div class="flex items-center gap-3">
+      <div class="w-1 h-6 rounded-full" style="background:#00E5FF;"></div>
+      <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Foundation</span>
+    </div>
+
+    <!-- Split -->
+    <div class="flex-1 flex sl-split gap-5 min-h-0">
+
+      <!-- Problem -->
+      <div class="sl-col flex flex-col rounded-2xl p-8 gap-5 overflow-hidden" style="background:#0f172a;">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl flex items-center justify-center" style="background:rgba(239,68,68,0.2);">
+            <span style="font-size:15px;">⚡</span>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color:#f87171;">The Problem</span>
+        </div>
+
+        <h2 class="text-2xl font-black text-white leading-snug">
+          Mobility is fragmented.<br/>Accountability is invisible.
+        </h2>
+
+        <div class="flex flex-col gap-4 flex-1">
+          <div class="flex gap-3 items-start">
+            <div class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#ef4444;"></div>
+            <p class="text-sm leading-relaxed" style="color:#cbd5e1;">Ride, vehicle service, and parcel customers juggle separate apps — no shared identity, trust score, or history across verticals.</p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#ef4444;"></div>
+            <p class="text-sm leading-relaxed" style="color:#cbd5e1;">Riders lack structured earnings transparency. Garages operate without analytics. Investors have no governance layer, only PDFs.</p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#ef4444;"></div>
+            <p class="text-sm leading-relaxed" style="color:#cbd5e1;">Admins see no unified audit trail. Trust and KPI are guessed, not measured — violations go untracked until they become crises.</p>
+          </div>
+        </div>
+
+        <!-- Stat strip -->
+        <div class="flex gap-6 pt-2 border-t" style="border-color:#1e293b;">
+          <div>
+            <div class="text-xl font-black" style="color:#ef4444;">6</div>
+            <div class="text-xs" style="color:#64748b;">Siloed roles</div>
+          </div>
+          <div>
+            <div class="text-xl font-black" style="color:#ef4444;">0</div>
+            <div class="text-xs" style="color:#64748b;">Shared trust layer</div>
+          </div>
+          <div>
+            <div class="text-xl font-black" style="color:#ef4444;">0</div>
+            <div class="text-xs" style="color:#64748b;">Unified KPI</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solution -->
+      <div class="sl-col flex flex-col rounded-2xl p-8 gap-5" style="background:#ecfeff;border:1px solid rgba(0,229,255,0.2);">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-xl flex items-center justify-center" style="background:rgba(0,229,255,0.2);">
+            <span style="font-size:15px;">✦</span>
+          </div>
+          <span class="text-xs font-bold uppercase tracking-widest" style="color:#0097a7;">The Solution</span>
+        </div>
+
+        <h2 class="text-2xl font-black text-slate-900 leading-snug">
+          One platform.<br/>Every role accountable.
+        </h2>
+
+        <div class="flex flex-col gap-4 flex-1">
+          <div class="flex gap-3 items-start">
+            <div class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#00b3cc;"></div>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>Trust Engine (100–888)</strong> — every booking, payment, and rating builds or reduces a real behavioural score, shared across all three service verticals.</p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#00b3cc;"></div>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>41 KPI indicators</strong> — measurable performance governance for every user role, from Customer ride frequency to Financial settlement velocity.</p>
+          </div>
+          <div class="flex gap-3 items-start">
+            <div class="w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0" style="background:#00b3cc;"></div>
+            <p class="text-sm text-slate-700 leading-relaxed"><strong>Investor Governance Dashboard</strong> — ROI analytics, voting center, and audit trails give investors real participatory rights, not just monthly PDFs.</p>
+          </div>
+        </div>
+
+        <!-- Tech chips -->
+        <div class="flex flex-wrap gap-2 pt-2 border-t border-cyan-100">
+          <span class="px-2.5 py-1 rounded-full text-xs font-semibold text-slate-700" style="background:rgba(0,229,255,0.15);">React 19</span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-semibold text-slate-700" style="background:rgba(0,229,255,0.15);">Socket.IO</span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-semibold text-slate-700" style="background:rgba(0,229,255,0.15);">Redux Toolkit</span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-semibold text-slate-700" style="background:rgba(0,229,255,0.15);">GPS Engine</span>
+          <span class="px-2.5 py-1 rounded-full text-xs font-semibold text-slate-700" style="background:rgba(0,229,255,0.15);">OTP Verified</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
