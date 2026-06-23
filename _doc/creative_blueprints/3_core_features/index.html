@@ -1,0 +1,90 @@
+<style>
+.mode-landscape .sl-grid { grid-template-columns: repeat(4, 1fr); }
+.mode-portrait .sl-grid { grid-template-columns: repeat(2, 1fr); }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="w-full h-full flex flex-col p-10 gap-4">
+
+    <!-- Header -->
+    <div class="flex flex-col gap-1">
+      <div class="flex items-center gap-3">
+        <div class="w-1 h-6 rounded-full" style="background:#00E5FF;"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Core Features</span>
+      </div>
+      <h2 class="text-3xl font-black text-slate-900">Built for every role. Engineered for the enterprise.</h2>
+    </div>
+
+    <!-- Persona chips -->
+    <div class="flex gap-2 flex-wrap">
+      <span class="px-4 py-1.5 rounded-full text-sm font-bold text-white shadow-sm" style="background:#0097a7;">
+        Customer
+      </span>
+      <span class="px-4 py-1.5 rounded-full text-sm font-medium text-slate-500 border border-slate-200">Rider</span>
+      <span class="px-4 py-1.5 rounded-full text-sm font-medium text-slate-500 border border-slate-200">Garage</span>
+      <span class="px-4 py-1.5 rounded-full text-sm font-medium text-slate-500 border border-slate-200">Investor</span>
+      <span class="px-4 py-1.5 rounded-full text-sm font-medium text-slate-500 border border-slate-200">Admin</span>
+    </div>
+
+    <!-- Feature grid — Customer persona (active) -->
+    <div class="flex-1 grid sl-grid gap-3 min-h-0">
+
+      <!-- Ride Booking -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(0,229,255,0.12);">🚖</div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">Ride Booking</div>
+        <p class="text-xs text-slate-500 leading-relaxed">Instant and scheduled rides — office, college, hospital, airport, intercity routes.</p>
+      </div>
+
+      <!-- Vehicle Services -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(0,229,255,0.12);">🔧</div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">Vehicle Services</div>
+        <p class="text-xs text-slate-500 leading-relaxed">Garage discovery, wash, detailing, pickup & drop, EV charging, inspection records.</p>
+      </div>
+
+      <!-- Parcel Delivery -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(0,229,255,0.12);">📦</div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">Parcel Delivery</div>
+        <p class="text-xs text-slate-500 leading-relaxed">OTP-verified delivery, proof of delivery capture, tracking, invoice, same-day options.</p>
+      </div>
+
+      <!-- Wallet -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(34,197,94,0.12);">💳</div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">Unified Wallet</div>
+        <p class="text-xs text-slate-500 leading-relaxed">UPI, card, net banking. Transaction, refund, and cashback history in one place.</p>
+      </div>
+
+      <!-- Trust Dashboard — dark card -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border" style="background:#0f172a;border-color:#1e293b;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(0,229,255,0.15);">🛡</div>
+        <div class="font-bold text-white text-sm leading-tight">Trust Dashboard</div>
+        <p class="text-xs leading-relaxed" style="color:#94a3b8;">Live trust score 100–888. History, rewards, penalties, and rank progression.</p>
+      </div>
+
+      <!-- KPI Dashboard -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(20,184,166,0.12);">📊</div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">KPI Dashboard</div>
+        <p class="text-xs text-slate-500 leading-relaxed">Personal KPI view — ride completion, payment success, rating, and frequency indicators.</p>
+      </div>
+
+      <!-- Emergency SOS -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(239,68,68,0.1);">🆘</div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">Emergency SOS</div>
+        <p class="text-xs text-slate-500 leading-relaxed">One-tap emergency trigger on all customer dashboards. Always visible, always fast.</p>
+      </div>
+
+      <!-- Auth -->
+      <div class="flex flex-col gap-2 p-5 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="w-9 h-9 rounded-xl flex items-center justify-center text-lg" style="background:rgba(0,229,255,0.12);">🔐</div>
+        <div class="font-bold text-slate-800 text-sm leading-tight">Secure Auth</div>
+        <p class="text-xs text-slate-500 leading-relaxed">OTP and face login with biometric verification. Role-based permissions enforced end-to-end.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
