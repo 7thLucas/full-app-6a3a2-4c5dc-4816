@@ -1,0 +1,106 @@
+<style>
+.mode-landscape .sl-grid { grid-template-columns: repeat(3, 1fr); }
+.mode-portrait .sl-grid { grid-template-columns: repeat(2, 1fr); }
+</style>
+
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="w-full h-full flex flex-col p-10 gap-5">
+
+    <!-- Header -->
+    <div class="flex flex-col gap-1">
+      <div class="flex items-center gap-3">
+        <div class="w-1 h-6 rounded-full" style="background:#00E5FF;"></div>
+        <span class="text-xs font-bold uppercase tracking-widest text-slate-400">Platform Benefits</span>
+      </div>
+      <h2 class="text-3xl font-black text-slate-900">Enterprise coverage. Measurable outcomes.</h2>
+    </div>
+
+    <!-- Metric card grid -->
+    <div class="flex-1 grid sl-grid gap-4 min-h-0">
+
+      <!-- 100+ Screens -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Coverage</div>
+        <div>
+          <div class="text-4xl font-black text-slate-900">100+</div>
+          <div class="text-sm font-semibold text-slate-700 mt-1">Screens</div>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Complete multi-role UI coverage — customer flows, rider ops, garage management, investor governance, and admin control.</p>
+        </div>
+      </div>
+
+      <!-- 41 KPI Indicators -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl" style="background:#0f172a;">
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#64748b;">Governance</div>
+        <div>
+          <div class="text-4xl font-black" style="color:#00E5FF;">41</div>
+          <div class="text-sm font-semibold text-white mt-1">KPI Indicators</div>
+          <p class="text-xs mt-2 leading-relaxed" style="color:#94a3b8;">Measurable performance metrics across Customer, Rider, Garage, Employee, Security, and Financial dimensions.</p>
+        </div>
+      </div>
+
+      <!-- Trust Score -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Accountability</div>
+        <div>
+          <div class="text-4xl font-black" style="color:#0097a7;">100→888</div>
+          <div class="text-sm font-semibold text-slate-700 mt-1">Trust Score Engine</div>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Behavioural trust score built from every booking, payment, and rating — rewards reliability, penalises violations.</p>
+        </div>
+      </div>
+
+      <!-- 6 Roles -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Roles</div>
+        <div>
+          <div class="text-4xl font-black text-slate-900">6</div>
+          <div class="text-sm font-semibold text-slate-700 mt-1">Distinct User Roles</div>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Customer (3 sub-types), Rider, Garage, Employee, Investor, and Admin — each with tailored dashboards and KPI views.</p>
+        </div>
+      </div>
+
+      <!-- 50+ Components -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl border border-slate-100" style="background:#f8fafc;">
+        <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-3">Design System</div>
+        <div>
+          <div class="text-4xl font-black text-slate-900">50+</div>
+          <div class="text-sm font-semibold text-slate-700 mt-1">Reusable Components</div>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed">Cards, charts, forms, tables, widgets, modals — a consistent component library that scales across all 100+ screens.</p>
+        </div>
+      </div>
+
+      <!-- Real-time GPS -->
+      <div class="flex flex-col justify-between p-6 rounded-2xl" style="background:#0f172a;">
+        <div class="text-xs font-bold uppercase tracking-widest mb-3" style="color:#64748b;">Real-time</div>
+        <div>
+          <div class="text-4xl font-black" style="color:#14B8A6;">Live</div>
+          <div class="text-sm font-semibold text-white mt-1">GPS + Socket.IO Engine</div>
+          <p class="text-xs mt-2 leading-relaxed" style="color:#94a3b8;">Real-time location tracking, ETA display, and OTP-verified pickup and delivery — for rides, services, and parcels.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ROI Summary band -->
+    <div class="rounded-2xl px-8 py-5 flex items-center justify-between gap-6"
+      style="background:linear-gradient(135deg,#0f172a 0%,#0c2340 100%);border:1px solid rgba(0,229,255,0.2);">
+      <p class="text-sm text-white leading-relaxed" style="max-width:60%;">
+        One React&nbsp;19 codebase replacing six separate role apps — with a shared trust layer, 41 KPIs, real-time GPS, and investor-grade governance built in from day one.
+      </p>
+      <div class="flex gap-6 flex-shrink-0">
+        <div class="text-center">
+          <div class="text-2xl font-black" style="color:#00E5FF;">3</div>
+          <div class="text-xs mt-0.5" style="color:#64748b;">Service Verticals</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black" style="color:#14B8A6;">13</div>
+          <div class="text-xs mt-0.5" style="color:#64748b;">Redux Slices</div>
+        </div>
+        <div class="text-center">
+          <div class="text-2xl font-black" style="color:#22C55E;">40+</div>
+          <div class="text-xs mt-0.5" style="color:#64748b;">Routes</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
