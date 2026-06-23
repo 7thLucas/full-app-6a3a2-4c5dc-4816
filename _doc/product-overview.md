@@ -1,989 +1,187 @@
-AIcegti Frontend Development Blueprint
+# AIcegti P.L. — Product Overview
 
-TECH STACK
+## Product Identity
 
-- React 19
-- TypeScript
-- Tailwind CSS
-- Redux Toolkit
-- React Router
-- React Query
-- Framer Motion
-- Recharts
-- Socket.IO
+**Name**: AIcegti P.L.
+**Type**: Enterprise-grade, multi-role mobility and logistics platform
+**Tagline**: One Platform. Six Roles. Zero Compromise.
+**Style**: Dark premium enterprise dashboard — React 19 + TypeScript + Tailwind CSS
 
-PROJECT STRUCTURE
+---
 
-src/
-├── app/
-├── routes/
-├── layouts/
-├── modules/
-│   ├── customer/
-│   ├── rider/
-│   ├── garage/
-│   ├── employee/
-│   ├── investor/
-│   └── admin/
-├── components/
-│   ├── cards/
-│   ├── charts/
-│   ├── forms/
-│   ├── tables/
-│   ├── widgets/
-│   └── modals/
-├── services/
-├── hooks/
-├── store/
-├── types/
-├── utils/
-└── themes/
+## What It Is
 
-MAIN LAYOUT
+AIcegti P.L. is a unified enterprise dashboard that serves six distinct user roles — Customer, Rider, Garage, Employee, Investor, and Admin — across three service verticals: **ride/travel booking**, **vehicle garage services**, and **parcel delivery**. Every role operates within a shared Trust Engine, KPI framework, and real-time GPS tracking layer, giving the platform governance depth far beyond a typical booking app.
 
-Sidebar
+---
 
-- Dashboard
-- Bookings
-- Tracking
-- Payments
-- KPI
-- Trust
-- Analytics
-- Reports
-- Settings
+## User Roles & Personas
 
-Top Navigation
+### 1. Customer (3 sub-types, unified ecosystem)
 
-- Search
-- Notifications
-- KPI Status
-- Trust Score
-- User Profile
+**Category A — Daily Travel Customer**
+- Services: Instant Ride, Schedule Ride, Office Ride, College Ride, Hospital Ride, Airport Ride, Railway Ride, Intercity Ride
+- Dashboard modules: Book Ride, Schedule Ride, Live Tracking, Wallet, Trip History, Trust Score, KPI Dashboard, Emergency SOS, Notifications
+- KPIs: Ride Completion, Ride Frequency, Payment Success, Customer Rating, Trust Score, Travel Score
 
-CUSTOMER MODULE
+**Category B — Vehicle Owner Customer**
+- Services: Vehicle Wash, Foam Wash, Detailing, Garage Service, Pickup & Drop, Parking, EV Charging, Insurance Records
+- Dashboard modules: Nearby Garages, Book Service, Pickup Request, Live Tracking, Inspection Records, Vehicle Health, Invoices, Complaint Center, Documents
+- KPIs: Booking KPI, Payment KPI, Vehicle Service KPI, Trust KPI, Complaint KPI
 
-- Splash Screen
-- OTP Login
-- Face Login
-- Dashboard
-- Nearby Garages
-- Garage Details
-- Booking
-- Tracking
-- Payments
-- Invoice
-- Complaints
-- KPI Dashboard
-- Trust Dashboard
-- Profile
+**Category C — Parcel Customer**
+- Services: Local Parcel, Document Delivery, Medical Parcel, Business Parcel, Express Parcel, Same Day Delivery
+- Dashboard modules: Book Parcel, Track Parcel, Delivery OTP, Proof of Delivery, Invoice, History, Complaint, Support
+- KPIs: Delivery KPI, Payment KPI, Parcel Accuracy KPI, Trust KPI, Rating KPI
 
-RIDER MODULE
+**Shared Customer modules**: Trust Dashboard, KPI Dashboard, Wallet, Notifications, Support, Emergency SOS, Settings, Profile (Face & OTP login)
 
-- Rider Dashboard
-- New Orders
-- Navigation
-- Pickup Verification
-- Video Upload
-- GPS Tracking
-- OTP Delivery
-- Earnings
-- KPI Dashboard
-- Trust Dashboard
+### 2. Rider
+- Screens: Dashboard, Order Management, GPS Navigation, Pickup Verification, Video Upload (proof), OTP Delivery, Earnings, KPI Dashboard, Trust Dashboard, Profile
+- Routes: `/rider/dashboard`, `/rider/orders`, `/rider/navigation`, `/rider/gps`, `/rider/pickup`, `/rider/delivery`, `/rider/earnings`, `/rider/kpi`, `/rider/trust`
 
-GARAGE MODULE
+### 3. Garage
+- Screens: Dashboard, Service Management, Pricing Management, QR Payments, Revenue Analytics, KPI Dashboard, Trust Dashboard, Profile
+- Routes: `/garage/dashboard`, `/garage/services`, `/garage/pricing`, `/garage/bookings`, `/garage/revenue`, `/garage/kpi`, `/garage/trust`
 
-- Garage Dashboard
-- Service Management
-- Pricing Management
-- QR Payments
-- Revenue Analytics
-- KPI Dashboard
-- Trust Dashboard
+### 4. Employee
+- Auth module + employee dashboard (in-scope, details defined in employee module)
 
-INVESTOR MODULE
+### 5. Investor
+- Screens: Investment Dashboard, ROI Analytics, Revenue Analytics, Governance Center, Voting Center, Documents, Wallet, Reports, Audit Trails
+- Routes: `/investor/dashboard`, `/investor/investments`, `/investor/roi`, `/investor/revenue`, `/investor/voting`, `/investor/reports`, `/investor/audit`, `/investor/wallet`
 
-- Investment Dashboard
-- ROI Analytics
-- Revenue Analytics
-- Governance Center
-- Voting Center
-- Documents
-- Wallet
-- Reports
+### 6. Admin
+- Screens: User Management, Rider Management, Garage Management, Booking Monitoring, Payment Monitoring, KPI Monitoring, Trust Governance, Fraud Alerts, Revenue Analytics, Audit Logs, Settings
+- Routes: `/admin/dashboard` through `/admin/settings` (11 routes)
 
-ADMIN MODULE
+---
 
-- User Management
-- Rider Management
-- Garage Management
-- Booking Monitoring
-- KPI Monitoring
-- Trust Governance
-- Fraud Alerts
-- Revenue Analytics
-- Audit Logs
+## Core Engines
 
-REUSABLE COMPONENTS
+### Trust Engine
+- **Score range**: 100 (initial) → 888 (maximum)
+- **Growth events**: Successful Booking (+5), Timely Payment (+3), Positive Rating (+2)
+- **Penalty events**: Cancellation (−5), Fake Complaint (−10), Payment Failure (−5), Policy Violation (−20)
+- Every role has its own Trust Dashboard; Admin has Trust Governance panel
 
-- Trust Score Widget
-- KPI Progress Card
-- Revenue Chart
-- Booking Timeline
-- QR Payment Card
-- Analytics Grid
-- Audit Table
-- Notification Panel
+### KPI Engine
+- **41 KPI indicators** across 6 dimensions: Customer KPI, Rider KPI, Garage KPI, Employee KPI, Security KPI, Financial KPI
+- Redux slice: `kpiSlice.ts` — state shape: `{ customerKPI, riderKPI, garageKPI, employeeKPI, securityKPI, financialKPI }`
 
-THEME
-Primary: #00E5FF
-Background: #0A0A0A
-Card: #1A1A1A
-Border: #2A2A2A
-Text: #FFFFFF
-Secondary Text: #BDBDBD
+### GPS Engine
+- Real-time location tracking, route calculation, ETA display
+- Redux slice: `gpsSlice.ts` — state shape: `{ currentLocation, route, eta, liveStatus }`
+- Powered by Socket.IO for live updates
 
-TARGET SCALE
+### Booking Engine
+- Redux slice: `bookingSlice.ts` — state: `{ activeBookings, completedBookings, cancelledBookings, liveTracking, invoiceData }`
+- Covers all three verticals: rides, vehicle services, parcels
 
-- 100+ Screens
-- 50+ Reusable Cards
-- 20+ Analytics Widgets
-- Mobile + Web Responsive
-- Enterprise Dashboard Style
-- Dark Premium ThemeAIcegti P.L. FRONTEND MASTER DEVELOPMENT STRUCTURE
+### Payment Engine
+- **Wallet methods**: UPI, Card, Net Banking
+- Redux slice: `paymentSlice.ts` — state: `{ transactions, invoices, settlements, wallet }`
+- QR Payment support for Garage role
+- Transaction, refund, and cashback history
 
-PHASE 1 — REACT + TYPESCRIPT FOLDER STRUCTURE
+### Audit Engine
+- Admin: Audit Logs (full operational audit trail)
+- Investor: Audit Trails (governance-grade transparency)
+- Supports Governance Center and Voting Center for investor participants
 
-src/
+---
 
-├── app/
-│   ├── App.tsx
-│   ├── Providers.tsx
-│   └── Router.tsx
-│
-├── routes/
-│   ├── AuthRoutes.tsx
-│   ├── CustomerRoutes.tsx
-│   ├── RiderRoutes.tsx
-│   ├── GarageRoutes.tsx
-│   ├── InvestorRoutes.tsx
-│   ├── EmployeeRoutes.tsx
-│   └── AdminRoutes.tsx
-│
-├── layouts/
-│   ├── AuthLayout.tsx
-│   ├── DashboardLayout.tsx
-│   ├── AdminLayout.tsx
-│   └── InvestorLayout.tsx
-│
-├── modules/
-│
-│   ├── auth/
-│   │   ├── Login
-│   │   ├── OTP
-│   │   ├── FaceLogin
-│   │   └── Verification
-│
-│   ├── customer/
-│   │   ├── Dashboard
-│   │   ├── Booking
-│   │   ├── Tracking
-│   │   ├── Payment
-│   │   ├── KPI
-│   │   ├── Trust
-│   │   └── Profile
-│
-│   ├── rider/
-│   │   ├── Dashboard
-│   │   ├── Orders
-│   │   ├── GPS
-│   │   ├── Earnings
-│   │   ├── KPI
-│   │   ├── Trust
-│   │   └── Profile
-│
-│   ├── garage/
-│   │   ├── Dashboard
-│   │   ├── Services
-│   │   ├── Pricing
-│   │   ├── Revenue
-│   │   ├── KPI
-│   │   ├── Trust
-│   │   └── Profile
-│
-│   ├── investor/
-│   │   ├── Dashboard
-│   │   ├── ROI
-│   │   ├── Voting
-│   │   ├── Audit
-│   │   ├── Reports
-│   │   └── Wallet
-│
-│   └── admin/
-│       ├── Dashboard
-│       ├── Users
-│       ├── Riders
-│       ├── Garages
-│       ├── KPI
-│       ├── Trust
-│       ├── Audit
-│       └── Settings
-│
-├── components/
-│   ├── cards/
-│   ├── charts/
-│   ├── forms/
-│   ├── tables/
-│   ├── widgets/
-│   ├── modals/
-│   └── navigation/
-│
-├── services/
-│   ├── api.ts
-│   ├── auth.service.ts
-│   ├── booking.service.ts
-│   ├── payment.service.ts
-│   ├── gps.service.ts
-│   └── trust.service.ts
-│
-├── store/
-├── hooks/
-├── types/
-├── utils/
-├── assets/
-└── themes/
+## Tech Stack
 
-=================================================
+| Layer | Technology |
+|---|---|
+| Framework | React 19 + TypeScript |
+| Styling | Tailwind CSS |
+| State | Redux Toolkit (13 slices) |
+| Routing | React Router (40+ routes, 6 role groups) |
+| Data fetching | React Query |
+| Animation | Framer Motion |
+| Charts | Recharts |
+| Real-time | Socket.IO |
 
-PHASE 2 — COMPLETE ROUTE ARCHITECTURE
+**Redux slices**: `authSlice`, `userSlice`, `bookingSlice`, `paymentSlice`, `gpsSlice`, `trustSlice`, `kpiSlice`, `complaintSlice`, `notificationSlice`, `riderSlice`, `garageSlice`, `investorSlice`, `adminSlice`
 
-AUTH
+---
 
-/
-/login
-/otp
-/face-login
-/verification
+## Brand & Visual Identity
 
-CUSTOMER
+| Token | Value | Usage |
+|---|---|---|
+| Primary | `#00E5FF` | Accent, borders, chip fills, highlights |
+| Background | `#0A0A0A` | App shell, dark panels |
+| Card | `#1A1A1A` | Dashboard card surfaces |
+| Border | `#2A2A2A` | Dividers, card borders |
+| Text | `#FFFFFF` | Primary text on dark |
+| Secondary Text | `#BDBDBD` | Subtext on dark |
+| Trust accent | `#06B6D4` | Trust score components |
+| KPI accent | `#14B8A6` | KPI progress indicators |
+| Wallet accent | `#22C55E` | Wallet and payment |
+| Success | `#10B981` | Confirmations |
+| Warning | `#F59E0B` | Alerts |
+| Danger | `#EF4444` | Errors, fraud alerts |
 
-/customer/dashboard
-/customer/bookings
-/customer/tracking
-/customer/payments
-/customer/invoices
-/customer/complaints
-/customer/kpi
-/customer/trust
-/customer/profile
+**Theme**: Dark premium, enterprise dashboard. Typography is clean, bold, editorial.
 
-RIDER
+---
 
-/rider/dashboard
-/rider/orders
-/rider/navigation
-/rider/gps
-/rider/pickup
-/rider/delivery
-/rider/earnings
-/rider/kpi
-/rider/trust
-/rider/profile
+## Scope & Scale
 
-GARAGE
+- **100+ screens** across all 6 roles
+- **50+ reusable components**: cards, charts, forms, tables, widgets, modals, navigation
+- **20–30 analytics widgets**
+- **20+ governance panels**
+- **40+ routes** across 6 role groups
+- **Mobile + web responsive**
+- **Production-ready architecture**
 
-/garage/dashboard
-/garage/services
-/garage/pricing
-/garage/bookings
-/garage/revenue
-/garage/kpi
-/garage/trust
-/garage/profile
+---
 
-INVESTOR
+## Authentication
 
-/investor/dashboard
-/investor/investments
-/investor/roi
-/investor/revenue
-/investor/voting
-/investor/reports
-/investor/audit
-/investor/wallet
+- OTP Login (`/otp`)
+- Face Login / Biometric Verification (`/face-login`)
+- Role-based permissions (Auth state: `{ token, role, profile, permissions, loginStatus }`)
 
-ADMIN
+---
 
-/admin/dashboard
-/admin/users
-/admin/riders
-/admin/garages
-/admin/bookings
-/admin/payments
-/admin/kpi
-/admin/trust
-/admin/audit
-/admin/fraud-alerts
-/admin/settings
+## Customer Profile Schema (TypeScript)
 
-=================================================
-
-PHASE 3 — REDUX STATE MANAGEMENT
-
-store/
-
-├── index.ts
-├── rootReducer.ts
-├── middleware.ts
-│
-├── slices/
-│
-│   ├── authSlice.ts
-│   ├── userSlice.ts
-│   ├── bookingSlice.ts
-│   ├── paymentSlice.ts
-│   ├── gpsSlice.ts
-│   ├── trustSlice.ts
-│   ├── kpiSlice.ts
-│   ├── complaintSlice.ts
-│   ├── notificationSlice.ts
-│   ├── riderSlice.ts
-│   ├── garageSlice.ts
-│   ├── investorSlice.ts
-│   └── adminSlice.ts
-
-STATE STRUCTURE
-
-Auth State
-
-{
-token,
-role,
-profile,
-permissions,
-loginStatus
+```typescript
+interface CustomerProfile {
+  customerId: string;
+  customerType: "TRAVEL" | "VEHICLE_OWNER" | "PARCEL";
+  profilePhoto: string;
+  fullName: string;
+  mobile: string;
+  email: string;
+  gender: string;
+  dob: string;
+  address: string;
+  city: string;
+  state: string;
+  trustScore: number;      // 100–888
+  kpiScore: number;
+  walletBalance: number;
+  totalBookings: number;
+  completedBookings: number;
+  cancelledBookings: number;
+  verificationStatus: boolean;
+  createdAt: string;
 }
+```
 
-Booking State
+---
 
-{
-activeBookings,
-completedBookings,
-cancelledBookings,
-liveTracking,
-invoiceData
-}
+## Strategic Principles
 
-Trust State
-
-{
-trustScore,
-rank,
-history,
-rewards,
-penalties
-}
-
-KPI State
-
-{
-customerKPI,
-riderKPI,
-garageKPI,
-employeeKPI,
-securityKPI,
-financialKPI
-}
-
-GPS State
-
-{
-currentLocation,
-route,
-eta,
-liveStatus
-}
-
-Payment State
-
-{
-transactions,
-invoices,
-settlements,
-wallet
-}
-
-Notification State
-
-{
-alerts,
-trustAlerts,
-kpiAlerts,
-paymentAlerts
-}
-
-=================================================
-
-AIcegti Frontend Scale
-
-100+ Screens
-50+ Reusable Components
-20+ Analytics Widgets
-6 User Roles
-41 KPI Indicators
-Trust Engine
-GPS Engine
-Booking Engine
-Payment Engine
-Audit Engine
-Governance Dashboard
-Enterprise Dark Theme
-React + TypeScript + Tailwind CSS
-Production Ready ArchitectureAIcegti P.L.
-CUSTOMER ECOSYSTEM MASTER STRUCTURE
-Unified Customer Governance Framework
-(Travel Customer + Vehicle Owner Customer + Parcel Customer)
-CUSTOMER HIERARCHY
-Plain text
-AIcegti Customer Ecosystem
-
-│
-├── Category A
-│
-│   Daily Travel Customer
-│
-│   Office Travel
-│   College Travel
-│   Hospital Travel
-│   Business Travel
-│   Intercity Travel
-│
-├── Category B
-│
-│   Vehicle Owner Customer
-│
-│   Car Owner
-│   Bike Owner
-│   EV Owner
-│   Commercial Vehicle Owner
-│
-└── Category C
-
-    Parcel Customer
-
-    Personal Parcel
-    Business Parcel
-    Document Delivery
-    Medical Delivery
-    Express Delivery
-CUSTOMER APP COLOR SYSTEM
-CSS
-Primary Color      #00E5FF
-Background         #050505
-Card Color         #111827
-Border Color       #1F2937
-
-Trust Color        #06B6D4
-KPI Color          #14B8A6
-Wallet Color       #22C55E
-
-Success            #10B981
-Warning            #F59E0B
-Danger             #EF4444
-CUSTOMER MASTER DATABASE
-TypeScript
-export interface CustomerProfile {
-
- customerId:string;
-
- customerType:
- "TRAVEL"
- |"VEHICLE_OWNER"
- |"PARCEL";
-
- profilePhoto:string;
-
- fullName:string;
-
- mobile:string;
-
- email:string;
-
- gender:string;
-
- dob:string;
-
- address:string;
-
- city:string;
-
- state:string;
-
- trustScore:number;
-
- kpiScore:number;
-
- walletBalance:number;
-
- totalBookings:number;
-
- completedBookings:number;
-
- cancelledBookings:number;
-
- verificationStatus:boolean;
-
- createdAt:string;
-
-}
-CATEGORY A
-DAILY TRAVEL CUSTOMER
-Services
-Plain text
-Instant Ride
-
-Schedule Ride
-
-Office Ride
-
-College Ride
-
-Hospital Ride
-
-Airport Ride
-
-Railway Ride
-
-Intercity Ride
-Daily Travel Dashboard
-Plain text
-Home
-
-Book Ride
-
-Schedule Ride
-
-Live Tracking
-
-Wallet
-
-Trip History
-
-Trust Score
-
-KPI Dashboard
-
-Emergency SOS
-
-Notifications
-Daily Travel KPIs
-Plain text
-Ride Completion
-
-Ride Frequency
-
-Payment Success
-
-Customer Rating
-
-Trust Score
-
-Travel Score
-CATEGORY B
-VEHICLE OWNER CUSTOMER
-Services
-Plain text
-Vehicle Wash
-
-Foam Wash
-
-Detailing
-
-Garage Service
-
-Pickup & Drop
-
-Parking
-
-EV Charging
-
-Insurance Records
-Vehicle Owner Dashboard
-Plain text
-Nearby Garages
-
-Book Service
-
-Pickup Request
-
-Live Tracking
-
-Inspection Records
-
-Vehicle Health
-
-Invoices
-
-Complaint Center
-
-Documents
-Vehicle Owner Profile Database
-TypeScript
-export interface VehicleOwner {
-
- vehicleId:string;
-
- ownerId:string;
-
- vehicleType:string;
-
- vehicleBrand:string;
-
- vehicleModel:string;
-
- vehicleNumber:string;
-
- insuranceStatus:boolean;
-
- trustScore:number;
-
- vehicleScore:number;
-
- serviceHistory:number;
-
-}
-CATEGORY C
-PARCEL CUSTOMER
-Services
-Plain text
-Local Parcel
-
-Document Delivery
-
-Medical Parcel
-
-Business Parcel
-
-Express Parcel
-
-Same Day Delivery
-Parcel Dashboard
-Plain text
-Book Parcel
-
-Track Parcel
-
-Delivery OTP
-
-Proof Of Delivery
-
-Invoice
-
-History
-
-Complaint
-
-Support
-Parcel Database
-TypeScript
-export interface ParcelProfile {
-
- parcelId:string;
-
- senderName:string;
-
- receiverName:string;
-
- senderMobile:string;
-
- receiverMobile:string;
-
- parcelType:string;
-
- parcelValue:number;
-
- trustScore:number;
-
- deliveryScore:number;
-
-}
-CUSTOMER TRUST ENGINE
-Plain text
-Initial Trust Score
-
-100
-
-↓
-
-Successful Booking
-
-+5
-
-Timely Payment
-
-+3
-
-Positive Rating
-
-+2
-
-↓
-
-Trust Growth
-
-↓
-
-Maximum
-
-888
-Trust Reduction
-Plain text
-Cancellation
-
--5
-
-Fake Complaint
-
--10
-
-Payment Failure
-
--5
-
-Policy Violation
-
--20
-CUSTOMER KPI ENGINE
-Travel Customer
-Plain text
-Ride Completion KPI
-
-Payment KPI
-
-Travel Frequency KPI
-
-Trust KPI
-
-Rating KPI
-Vehicle Owner
-Plain text
-Booking KPI
-
-Payment KPI
-
-Vehicle Service KPI
-
-Trust KPI
-
-Complaint KPI
-Parcel Customer
-Plain text
-Delivery KPI
-
-Payment KPI
-
-Parcel Accuracy KPI
-
-Trust KPI
-
-Rating KPI
-CUSTOMER WALLET SYSTEM
-Plain text
-Wallet Balance
-
-Add Money
-
-UPI
-
-Card
-
-Net Banking
-
-Transaction History
-
-Refund History
-
-Cashback History
-CUSTOMER PROFILE HEADER
-TypeScript
-export default function CustomerProfile(){
-
- return(
-
-  <div className="bg-zinc-900 p-6 rounded-3xl">
-
-   <img
-    src="/profile.png"
-    className="w-24 h-24 rounded-full"
-   />
-
-   <h2>
-
-    Customer Name
-
-   </h2>
-
-   <p>
-
-    Customer ID
-    CUS10001
-
-   </p>
-
-   <p>
-
-    Trust Score
-    728
-
-   </p>
-
-  </div>
-
- )
-
-}
-CUSTOMER DASHBOARD MODULES
-Plain text
-01 Profile
-
-02 Trust Score
-
-03 KPI Dashboard
-
-04 Wallet
-
-05 Booking
-
-06 Tracking
-
-07 Schedule
-
-08 History
-
-09 Complaint
-
-10 Documents
-
-11 Notifications
-
-12 Support
-
-13 Emergency SOS
-
-14 Rewards
-
-15 Referral
-
-16 Settings
-
-17 Privacy
-
-18 Security
-
-19 Help Center
-
-20 Logout
-COMPLETE CUSTOMER APP STRUCTURE
-Plain text
-Customer App
-
-├── Splash Screen
-
-├── Login
-
-├── OTP
-
-├── Face Verification
-
-├── Dashboard
-
-│
-├── Travel Module
-
-│   ├── Ride Booking
-
-│   ├── Schedule Ride
-
-│   ├── Tracking
-
-│   ├── Wallet
-
-│   └── History
-
-│
-├── Vehicle Module
-
-│   ├── Garage Discovery
-
-│   ├── Vehicle Service
-
-│   ├── Pickup Drop
-
-│   ├── Tracking
-
-│   ├── Inspection
-
-│   └── Documents
-
-│
-├── Parcel Module
-
-│   ├── Parcel Booking
-
-│   ├── Tracking
-
-│   ├── OTP Delivery
-
-│   ├── Proof Delivery
-
-│   └── Invoice
-
-│
-├── Trust Dashboard
-
-├── KPI Dashboard
-
-├── Wallet
-
-├── Notifications
-
-├── Support
-
-├── SOS
-
-└── Settings
-AIcegti CUSTOMER ECOSYSTEM FINAL SUMMARY
-Plain text
-Customer Categories
-
-1. Daily Travel Customer
-
-2. Vehicle Owner Customer
-
-3. Parcel Customer
-
-Unified Modules
-
-Trust Engine
-
-KPI Engine
-
-Wallet Engine
-
-Tracking Engine
-
-Complaint Engine
-
-Audit Engine
-
-Governance Engine
-
-100+ Screens
-
-50+ Dashboard Cards
-
-30+ Analytics Widgets
-
-20+ Governance Panels
-
-1 Unified Customer Ecosystem
+1. **Unified governance**: Trust Engine and KPI Engine span every role — no silo operates outside the accountability layer.
+2. **Behavioral incentives**: Trust score mechanics (max 888) reward reliable behavior and penalize violations, creating platform-wide quality alignment without manual moderation overhead.
+3. **Investor-grade transparency**: Governance Center, Voting Center, and Audit Trails give investors meaningful visibility and participatory governance rights — not just reporting.
+4. **Production-first architecture**: Redux Toolkit + React Query + Socket.IO is designed for real-time, high-concurrency enterprise use from day one, not retrofitted later.
+5. **Composable design system**: 50+ reusable components ensure consistent UX across 100+ screens and 6 roles, enabling rapid feature additions without visual drift.
+6. **Three verticals, one trust layer**: Travel, vehicle services, and parcel delivery are architecturally separate modules but share one trust score, one wallet, and one KPI framework — the customer's reputation carries across everything they do on the platform.
